@@ -1,0 +1,108 @@
+#Asignment 1
+#1
+class Person {
+    String name;
+    int age;
+
+    // Constructor
+    Person(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        Person p1 = new Person("Ajay", 20);
+        Person p2 = new Person("Rahul", 22);
+
+        p1.display();
+        p2.display();
+    }
+}
+
+
+#2
+import java.util.*;
+
+class Book {
+    String title, author;
+    int isbn;
+
+    Book(String t, String a, int i) {
+        title = t;
+        author = a;
+        isbn = i;
+    }
+
+    void display() {
+        System.out.println(title + " | " + author + " | " + isbn);
+    }
+}
+
+class Library {
+    ArrayList<Book> books = new ArrayList<>();
+
+    void addBook(Book b) {
+        books.add(b);
+    }
+
+    void removeBook(int isbn) {
+        books.removeIf(b -> b.isbn == isbn);
+    }
+
+    void displayBooks() {
+        for (Book b : books) {
+            b.display();
+        }
+    }
+
+    public static void main(String[] args) {
+        Library lib = new Library();
+
+        lib.addBook(new Book("Java", "James", 101));
+        lib.addBook(new Book("Python", "Guido", 102));
+
+        lib.displayBooks();
+        lib.removeBook(101);
+
+        System.out.println("After removal:");
+        lib.displayBooks();
+    }
+}
+
+
+#3
+class CARRENTAL {
+    int carId;
+    String carType;
+    float rent;
+
+    void GetCar(int id, String type) {
+        carId = id;
+        carType = type;
+    }
+
+    void GetRent() {
+        if (carType.equalsIgnoreCase("Small"))
+            rent = 1000;
+        else if (carType.equalsIgnoreCase("Van"))
+            rent = 800;
+        else if (carType.equalsIgnoreCase("SUV"))
+            rent = 2500;
+    }
+
+    void ShowCar() {
+        System.out.println(carId + " | " + carType + " | Rent: " + rent);
+    }
+
+    public static void main(String[] args) {
+        CARRENTAL c = new CARRENTAL();
+        c.GetCar(1, "SUV");
+        c.GetRent();
+        c.ShowCar();
+    }
+}
+
