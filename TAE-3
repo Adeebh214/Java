@@ -106,3 +106,82 @@ class CARRENTAL {
     }
 }
 
+
+#4
+class Resort {
+    int Rno, Days;
+    String Name;
+    float Charges, Amount;
+
+    void Getinfo(int r, String n, float c, int d) {
+        Rno = r;
+        Name = n;
+        Charges = c;
+        Days = d;
+    }
+
+    void Compute() {
+        Amount = Days * Charges;
+        if (Amount > 11000)
+            Amount = (float)(Amount * 1.02);
+    }
+
+    void DispInfo() {
+        Compute();
+        System.out.println(Rno + " | " + Name + " | " + Charges + " | " + Days + " | " + Amount);
+    }
+
+    public static void main(String[] args) {
+        Resort r = new Resort();
+        r.Getinfo(101, "Raj", 2000, 6);
+        r.DispInfo();
+    }
+}
+
+
+#5
+class Employee {
+    int empno;
+    String ename;
+    float basic, hra, da, netpay;
+
+    float calculate() {
+        return basic + hra + da;
+    }
+
+    void havedata(int no, String name, float b, float h, float d) {
+        empno = no;
+        ename = name;
+        basic = b;
+        hra = h;
+        da = d;
+        netpay = calculate();
+    }
+
+    void dispdata() {
+        System.out.println(empno + " | " + ename + " | Net Pay: " + netpay);
+    }
+
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.havedata(1, "Amit", 10000, 2000, 1500);
+        e.dispdata();
+    }
+}
+
+
+#6
+class Rectangle {
+    int length, breadth;
+
+    int Area(int l, int b) {
+        return l * b;
+    }
+
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+
+        System.out.println("Area1: " + r.Area(4, 5));
+        System.out.println("Area2: " + r.Area(6, 3));
+    }
+}
