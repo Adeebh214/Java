@@ -185,3 +185,108 @@ class Rectangle {
         System.out.println("Area2: " + r.Area(6, 3));
     }
 }
+
+
+#7
+abstract class Shape {
+    abstract void calculate_area();
+
+    void display_info() {
+        System.out.println("This is a shape");
+    }
+}
+
+class Circle extends Shape {
+    double r = 5;
+
+    void calculate_area() {
+        System.out.println("Circle Area: " + (3.14 * r * r));
+    }
+}
+
+class Rectangle extends Shape {
+    int l = 4, b = 5;
+
+    void calculate_area() {
+        System.out.println("Rectangle Area: " + (l * b));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s;
+
+        s = new Circle();
+        s.display_info();
+        s.calculate_area();
+
+        s = new Rectangle();
+        s.display_info();
+        s.calculate_area();
+    }
+}
+
+
+#8
+interface Filterable {
+    void apply_filter(String type);
+    void reset_filter();
+}
+
+class ImageProcessor implements Filterable {
+    public void apply_filter(String type) {
+        System.out.println("Applying " + type + " filter to image");
+    }
+
+    public void reset_filter() {
+        System.out.println("Image filter reset");
+    }
+}
+
+class DataAnalyzer implements Filterable {
+    public void apply_filter(String type) {
+        System.out.println("Applying " + type + " filter to data");
+    }
+
+    public void reset_filter() {
+        System.out.println("Data filter reset");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Filterable f1 = new ImageProcessor();
+        f1.apply_filter("Blur");
+        f1.reset_filter();
+
+        Filterable f2 = new DataAnalyzer();
+        f2.apply_filter("Noise Removal");
+        f2.reset_filter();
+    }
+}
+
+
+#9
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+
+        System.out.println(c.add(2, 3));
+        System.out.println(c.add(2, 3, 4));
+        System.out.println(c.add(2.5, 3.5));
+    }
+}
