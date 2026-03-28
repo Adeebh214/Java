@@ -290,3 +290,113 @@ public class Main {
         System.out.println(c.add(2.5, 3.5));
     }
 }
+
+
+#10
+interface Bank {
+    double getInterestRate();
+}
+
+class SBI implements Bank {
+    public double getInterestRate() {
+        return 6.5;
+    }
+}
+
+class HDFC implements Bank {
+    public double getInterestRate() {
+        return 7.0;
+    }
+}
+
+class ICICI implements Bank {
+    public double getInterestRate() {
+        return 6.8;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bank b;
+
+        b = new SBI();
+        System.out.println("SBI Rate: " + b.getInterestRate());
+
+        b = new HDFC();
+        System.out.println("HDFC Rate: " + b.getInterestRate());
+
+        b = new ICICI();
+        System.out.println("ICICI Rate: " + b.getInterestRate());
+    }
+}
+
+
+#11
+class Shape {
+    void display() {
+        System.out.println("This is Shape");
+    }
+}
+
+class Circle extends Shape {
+    void area() {
+        System.out.println("Circle Area: " + (3.14 * 5 * 5));
+    }
+}
+
+class Rectangle extends Shape {
+    void area() {
+        System.out.println("Rectangle Area: " + (4 * 6));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        c.display();
+        c.area();
+
+        Rectangle r = new Rectangle();
+        r.display();
+        r.area();
+    }
+}
+
+
+#12
+abstract class Payment {
+    abstract void pay(double amount);
+}
+
+class CreditCardPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card");
+    }
+}
+
+class UPIPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using UPI");
+    }
+}
+
+class NetBankingPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using Net Banking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Payment p;
+
+        p = new CreditCardPayment();
+        p.pay(1000);
+
+        p = new UPIPayment();
+        p.pay(500);
+
+        p = new NetBankingPayment();
+        p.pay(2000);
+    }
+}
