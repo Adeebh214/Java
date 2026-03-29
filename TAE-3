@@ -400,3 +400,140 @@ public class Main {
         p.pay(2000);
     }
 }
+
+
+#13
+abstract class Employee {
+    String name;
+    double salary;
+
+    Employee(String n, double s) {
+        name = n;
+        salary = s;
+    }
+
+    abstract double calculateBonus();
+}
+
+class Manager extends Employee {
+    Manager(String n, double s) {
+        super(n, s);
+    }
+
+    double calculateBonus() {
+        return salary * 0.20;
+    }
+}
+
+class Developer extends Employee {
+    Developer(String n, double s) {
+        super(n, s);
+    }
+
+    double calculateBonus() {
+        return salary * 0.10;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e;
+
+        e = new Manager("Adeebh", 50000);
+        System.out.println("Manager Bonus: " + e.calculateBonus());
+
+        e = new Developer("Rahul", 40000);
+        System.out.println("Developer Bonus: " + e.calculateBonus());
+    }
+}
+
+
+#14
+class Person {
+    void role() {
+        System.out.println("I am a person");
+    }
+}
+
+class Employee extends Person {
+    void role() {
+        System.out.println("I am an employee");
+    }
+}
+
+class Manager extends Employee {
+    void role() {
+        System.out.println("I am a manager");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person p;
+
+        p = new Person();
+        p.role();
+
+        p = new Employee();
+        p.role();
+
+        p = new Manager();
+        p.role();
+    }
+}
+
+
+#15
+abstract class Ride {
+    double distance;
+
+    Ride(double d) {
+        distance = d;
+    }
+
+    abstract double calculateFare();
+}
+
+class BikeRide extends Ride {
+    BikeRide(double d) {
+        super(d);
+    }
+
+    double calculateFare() {
+        return distance * 5;
+    }
+}
+
+class AutoRide extends Ride {
+    AutoRide(double d) {
+        super(d);
+    }
+
+    double calculateFare() {
+        return distance * 8;
+    }
+}
+
+class CarRide extends Ride {
+    CarRide(double d) {
+        super(d);
+    }
+
+    double calculateFare() {
+        return distance * 12;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Ride rides[] = {
+            new BikeRide(10),
+            new AutoRide(10),
+            new CarRide(10)
+        };
+
+        for (Ride r : rides) {
+            System.out.println("Fare: " + r.calculateFare());
+        }
+    }
+}
