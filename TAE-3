@@ -625,3 +625,82 @@ public class Main {
         System.out.println("Interest: " + b.calculateInterest(20000));
     }
 }
+
+
+#19
+class Book {
+    String title, author;
+    double price;
+
+    Book(String t, String a, double p) {
+        title = t;
+        author = a;
+        price = p;
+    }
+
+    void display() {
+        System.out.println(title + " | " + author + " | " + price);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Book books[] = {
+            new Book("Java", "James", 500),
+            new Book("Python", "Guido", 600),
+            new Book("C++", "Bjarne", 700)
+        };
+
+        for (Book b : books) {
+            b.display();
+        }
+    }
+}
+
+
+#20
+class Employee {
+    String name;
+    double salary;
+
+    Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    void display() {
+        System.out.println(name + " | Salary: " + salary);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Ajay", 30000);
+        Employee e2 = new Employee("Rahul", 40000);
+
+        e1.display();
+        e2.display();
+    }
+}
+
+
+#Asigment 2
+#1
+import java.util.*;
+
+class UsernameValidator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter username: "); // ✅ fixed
+        String username = sc.nextLine();
+
+        // Remove spaces
+        username = username.trim();
+
+        // Convert to lowercase
+        username = username.toLowerCase();
+
+        System.out.println("Cleaned Username: " + username);
+    }
+}
