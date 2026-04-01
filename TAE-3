@@ -704,3 +704,73 @@ class UsernameValidator {
         System.out.println("Cleaned Username: " + username);
     }
 }
+
+
+#2
+import java.util.*;
+
+class EmailChecker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter email: ");
+        String email = sc.nextLine();
+
+        if (email.contains("@gmail.com")) {
+            System.out.println("Valid Gmail Address");
+        } else {
+            System.out.println("Invalid Email");
+        }
+    }
+}
+
+
+#3
+import java.util.*;
+
+class StudentNameComparison {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first name: ");
+        String name1 = sc.nextLine();
+
+        System.out.print("Enter second name: ");
+        String name2 = sc.nextLine();
+
+        // Case-sensitive comparison
+        if (name1.equals(name2)) {
+            System.out.println("Case-sensitive: Names are SAME");
+        } else {
+            System.out.println("Case-sensitive: Names are DIFFERENT");
+        }
+
+        // Case-insensitive comparison
+        if (name1.equalsIgnoreCase(name2)) {
+            System.out.println("Case-insensitive: Names are SAME");
+        } else {
+            System.out.println("Case-insensitive: Names are DIFFERENT");
+        }
+    }
+}
+
+
+#4
+import java.util.*;
+
+class MessageFormatter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first name: ");
+        String first = sc.nextLine();
+
+        System.out.print("Enter last name: ");
+        String last = sc.nextLine();
+
+        // Concatenate
+        String fullName = first + " " + last;
+
+        System.out.println("Full Name: " + fullName);
+    }
+}
